@@ -1,0 +1,40 @@
+extends _layout
+
+block prepend head
+	title WOD
+
+block append head
+	script(type='text/javascript', src='/js/bootstrap.js')
+
+block content
+	div#title
+		h1 Racinha Walking Dead - Dice Roller
+	div#register.center
+		span Jogador:
+		input#player(type="text", size="40", maxlength="40")
+		input(type="button", value="Ok", onclick="register()")
+
+	div#form(style='display:none')
+		table
+			tr
+				td
+					span Ação:
+					input#action(type="text", size="40", maxlength="40")
+				td.center
+					span Dados:
+					input#diceCount(type="text", size="2", maxlength="2")
+				td.center
+					input(type="button", value="Rolar!", onclick="roll()")
+
+	div#results(style='display:none')
+		table
+			thead
+				tr
+					th(style="width:90px;") Data
+					th Jogador
+					th Ação
+					th(style="width:90x;") Dados
+					//th Dados Extras
+					//th Resultados
+					th(style="width:120px;") Sucessos
+			tbody
