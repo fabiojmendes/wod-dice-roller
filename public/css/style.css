@@ -70,10 +70,10 @@ table td, table th {
 	padding: 2px;
 }
 
-table td .playerName {
-
+table td.playerName {
 	text-transform: uppercase;
 	font-weight: bold;
+	font-size: 200%;
 }
 
 div#content {
