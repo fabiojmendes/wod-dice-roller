@@ -3,18 +3,8 @@
  */
 
 exports.index = function(req, res) {
-	res.render('index', {
-		colors: [
-			'#000066',
-			'#006600',
-			'#660000',
-			'#996633',
-			'#006699',
-			'#cccc00',
-			'#00cc33',
-			'#ff0000'
-		]
-	});
+	var player = req.session.player ? req.session.player : {};
+	res.render('index', { player: player });
 };
 
 exports.register = function(req, res) {

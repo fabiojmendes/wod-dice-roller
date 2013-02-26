@@ -16,6 +16,38 @@ a {
 	text-align: center;
 }
 
+.color0 {
+	color: #000000;
+}
+
+.color1 {
+	color: #03037a;
+}
+
+.color2 {
+	color: #1b881b;
+}
+
+.color3 {
+	color: #8b0202;
+}
+
+.color4 {
+	color: #874706;
+}
+
+.color5 {
+	color: #043e5b;
+}
+
+.color6 {
+	color: #570575;
+}
+
+.color7 {
+	color: #403e07;
+}
+
 input[type=text] {
 	padding: 8px 8px;
 	border-radius: 8px;
@@ -35,7 +67,6 @@ input[type=button], input[type=submit] {
 }
 
 input[type=button]:hover, input[type=submit]:hover {
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
 	background-color:#666;
 }
 
@@ -44,15 +75,8 @@ input[type=button]:active, input[type=submit]:active {
 	top: 1px;
 }
 
-/*.box {
-	background-color: #444;
-	padding: 10px;
-	border-radius: 10px;
-}*/
-
 table {
 	background-color: #444;
-	border: 1px solid white;
 	padding: 5px;
 	border-radius: 5px;
 	margin: auto;
@@ -119,15 +143,17 @@ div#results table th {
 }
 
 div#results table tr:hover td {
-	background: #888;
+	background-color: black;
+	color: white;
+	background: black;
 }
 
 div#results table tr:nth-child(even) {
-	background: #DDD;
+	background: #D2D2D2;
 }
 
 div#results table tr:nth-child(odd) {
-	background: #FFF;
+	background: #929292;
 }
 
 div#results table td.success {

@@ -13,13 +13,13 @@ block content
 				tr
 					td Jogador:
 					td
-						input#player(type="text", name="player", size="20", maxlength="20")
+						input#player(type="text", name="player", size="20", maxlength="20", value=player.name)
 				tr
 					td Cor:
 					td
 						select(name="color")
-							for color in colors
-								option(style="color: #{color}") #{color}
+							- for (i = 0; i < 8; i++)
+								option(selected=i == player.color, value=i) Cor #{i + 1}
 				tr
 					td
 					td(style='text-align: right')

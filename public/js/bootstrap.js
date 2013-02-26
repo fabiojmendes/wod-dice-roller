@@ -28,9 +28,7 @@ function appendRow(data) {
 function newTd(value, cssClass, color) {
 	var column = $('<td>')
 	column.addClass(cssClass);
-	column.css({
-		color: color
-	});
+	column.addClass('color' + color);
 	column.text(value);
 	return column;
 }
