@@ -1,0 +1,34 @@
+extends _layout
+
+block append head
+	script(type="text/javascript", src="/js/bootstrap.js")
+
+block content
+	#form
+		table
+			tr
+				td
+					span Ação:
+				td
+					input#action(type="text", size="20", maxlength="20", tabindex="1")
+				td.center(rowspan="2")
+					input#rollButton(type="button", value="Rolar!", onclick="roll()")
+
+			tr
+				td.center
+					span Dados:
+				td
+					input#diceCount(type="text", size="20", maxlength="2", tabindex="2")
+
+	#results
+		table
+			thead
+				tr
+					th(style="width:90px;") Data
+					th Jogador
+					th Ação
+					th(style="width:90x;") Dados
+					//th Dados Extras
+					//th Resultados
+					th(style="width:120px;") Sucessos
+			tbody
