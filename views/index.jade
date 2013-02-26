@@ -1,40 +1,26 @@
 extends _layout
 
-block prepend head
-	title WOD
-
 block append head
-	script(type='text/javascript', src='/js/bootstrap.js')
+	script(type="text/javascript")
+		$(document).ready(function() {
+			$("#player").focus();
+		});
 
 block content
-	div#title
-		h1 Racinha Walking Dead - Dice Roller
-	div#register.center
-		span Jogador:
-		input#player(type="text", size="40", maxlength="40")
-		input(type="button", value="Ok", onclick="register()")
-
-	div#form(style='display:none')
-		table
-			tr
-				td
-					span Ação:
-					input#action(type="text", size="40", maxlength="40")
-				td.center
-					span Dados:
-					input#diceCount(type="text", size="2", maxlength="2")
-				td.center
-					input(type="button", value="Rolar!", onclick="roll()")
-
-	div#results(style='display:none')
-		table
-			thead
+	div#register
+		form(action="/register", method="post")
+			table
 				tr
-					th(style="width:90px;") Data
-					th Jogador
-					th Ação
-					th(style="width:90x;") Dados
-					//th Dados Extras
-					//th Resultados
-					th(style="width:120px;") Sucessos
-			tbody
+					td Jogador:
+					td
+						input#player(type="text", name="player", size="20", maxlength="20")
+				tr
+					td Cor:
+					td
+						select(name="color")
+							for color in colors
+								option(style="color: #{color}") #{color}
+				tr
+					td
+					td(style='text-align: right')
+						input(type="submit", value="Entrar")

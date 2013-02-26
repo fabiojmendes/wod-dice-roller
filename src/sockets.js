@@ -1,23 +1,22 @@
 var diceRoller = require('./diceroller');
 
-exports.init = function(server) {
-	var io = require('socket.io').listen(server);
+exports.init = function(server, sessionStore, cookieParser) {
+	var io = require('socket.io').listen(server),
+		SessionSockets = require('session.socket.io'),
+		sessionSockets = new SessionSockets(io, sessionStore, cookieParser);
 
-	io.sockets.on('connection', function(socket) {
+	sessionSockets.on('connection', function(err, socket, session) {
 
 		socket.emit('refreshAll', diceRoller.history());
 
-		socket.on('register', function (player) {
-			socket.set('player', player, function () {
-				socket.emit('ready');
-			});
-		});
-
 		socket.on('roll', function (data) {
-			socket.get('player', function(err, player) {
-				data.player = player;
-				io.sockets.emit('refresh', diceRoller.roll(data));
-			});
+			if (session) {
+				data.player = session.player;
+			} else {
+				data.player = { name: 'No Name' };
+			}
+			console.log('Session on socket.io: ' + session);
+			io.sockets.emit('refresh', diceRoller.roll(data));
 		});
 	});
 }

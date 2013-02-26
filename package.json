@@ -6,8 +6,10 @@
 		"start": "node app"
 	},
 	"dependencies": {
+		"connect": "*",
 		"express": "3.1.0",
 		"jade": "*",
-		"socket.io": "*"
+		"socket.io": "*",
+		"session.socket.io": "*"
 	}
 }
