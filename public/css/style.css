@@ -153,7 +153,7 @@ div#results table tr:nth-child(even) {
 }
 
 div#results table tr:nth-child(odd) {
-	background: #929292;
+	background: #A2A2A2;
 }
 
 div#results table td.success {
